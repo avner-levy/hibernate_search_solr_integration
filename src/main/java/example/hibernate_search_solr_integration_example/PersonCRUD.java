@@ -1,9 +1,8 @@
-package jpa.spring_hibernate;
+package example.hibernate_search_solr_integration_example;
 
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
 /**

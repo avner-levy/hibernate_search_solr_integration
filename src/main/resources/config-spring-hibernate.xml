@@ -14,7 +14,7 @@
         >
 
 	<jdbc:embedded-database id="dataSource"/>
-    <context:component-scan base-package="jpa.spring_hibernate"/>
+    <context:component-scan base-package="example.hibernate_search_solr_integration_example"/>
     <context:annotation-config />
     <context:spring-configured/>
 
@@ -25,7 +25,7 @@
 		<property name="persistenceUnitName" value="jpaTest" />
 		<property name="packagesToScan">
 			<list>
-				<value>jpa.spring_hibernate</value>
+				<value>example.hibernate_search_solr_integration_example</value>
 			</list>
 		</property>
 		<property name="jpaVendorAdapter">

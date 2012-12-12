@@ -1,6 +1,5 @@
-package jpa.spring_hibernate;
+package example.hibernate_search_solr_integration_example;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

@@ -1,4 +1,4 @@
-package jpa.spring_hibernate;
+package example.hibernate_search_solr_integration_example;
 
 import javax.persistence.*;
 
