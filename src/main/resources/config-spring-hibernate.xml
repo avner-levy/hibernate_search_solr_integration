@@ -35,6 +35,13 @@
                 <property name="showSql" value="true" />
 			</bean>
 		</property>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="hibernate.search.default.directory_provider" value="org.hibernate.search.store.impl.RAMDirectoryProvider"/>
+                <entry key="hibernate.search.default.worker.backend" value="example.hibernate_search_solr_integration_example.solr_adapter.HibernateSearchSolrWorkerBackend"/>
+                <entry key="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            </map>
+        </property>
 	</bean>
 
 	<bean id="transactionManager"

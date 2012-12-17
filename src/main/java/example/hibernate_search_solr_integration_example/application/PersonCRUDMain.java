@@ -1,4 +1,4 @@
-package example.hibernate_search_solr_integration_example;
+package example.hibernate_search_solr_integration_example.application;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

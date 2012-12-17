@@ -1,4 +1,4 @@
-package example.hibernate_search_solr_integration_example;
+package example.hibernate_search_solr_integration_example.application;
 
 import org.springframework.stereotype.Repository;
 
@@ -18,11 +18,11 @@ public class PersonDAO {
     @PersistenceContext
     private EntityManager em;
 
-    void addPerson(Person person) {
+    public void addPerson(Person person) {
         em.persist(person);
     }
 
-    List<Person> getPeople() {
+    public List<Person> getPeople() {
         return em.createNamedQuery(Person.ALL_PEOPLE_QUERY).getResultList();
     }
 }

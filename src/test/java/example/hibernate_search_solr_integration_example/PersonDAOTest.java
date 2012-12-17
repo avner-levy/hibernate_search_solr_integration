@@ -1,6 +1,8 @@
 package example.hibernate_search_solr_integration_example;
 
 
+import example.hibernate_search_solr_integration_example.application.Person;
+import example.hibernate_search_solr_integration_example.application.PersonDAO;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,23 +26,24 @@ public class PersonDAOTest {
 
     public void addPerson() {
         Person person = new Person();
-        person.setId(1L);
         person.setName("Avner");
+        person.setAge((short)4);
         personDAO.addPerson(person);
     }
 	
 	@Test @Transactional
 	public void retrieveAccount() {
         addPerson();
-		Query query = entityManager.createQuery("from Person a where a.id=:id").setParameter("id", 1L);
-		Person a = (Person) query.getSingleResult();
-		Assert.assertEquals(a.getName(), "Avner");
+		Query query = entityManager.createQuery("select p from Person p");
+		Person person = (Person) query.getSingleResult();
+
+		Assert.assertEquals(person.getName(), "Avner");
 	}
 	
 	@Test @Transactional
 	public void updateAccount() {
         addPerson();
-		Query query = entityManager.createQuery("from Person a where a.id=:id").setParameter("id", 1L);
+        Query query = entityManager.createQuery("select p from Person p");
 		Person a = (Person) query.getSingleResult();
 		a.setName("foo");
 	}

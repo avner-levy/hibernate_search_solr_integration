@@ -1,4 +1,4 @@
-package example.hibernate_search_solr_integration_example;
+package example.hibernate_search_solr_integration_example.application;
 
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +21,16 @@ public class PersonCRUD {
     @Transactional
     private void addEntity() {
         Person person = new Person();
-        person.setId(1L);
         person.setName("David");
+        person.setAge((short)45);
+        person.setComments("I'm a very nice person");
         personDAO.addPerson(person);
     }
 
     @Transactional
     private void printPeople() {
         for (Person person : personDAO.getPeople())
-            System.out.println(person);
+            System.out.println("Person: "+ person);
     }
 
     public void run() {
