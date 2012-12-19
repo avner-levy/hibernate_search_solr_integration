@@ -54,7 +54,7 @@ public class HibernateSearchSolrWorkerBackend implements BackendQueueProcessor {
             if (work instanceof AddLuceneWork) {
                 handleAddLuceneWork((AddLuceneWork) work, solrWork);
             } else if (work instanceof UpdateLuceneWork) {
-                handleAddLuceneWork((AddLuceneWork) work, solrWork);
+                handleUpdateLuceneWork((UpdateLuceneWork) work, solrWork);
             } else if (work instanceof DeleteLuceneWork) {
                 documentsForDeletion.add(((DeleteLuceneWork)work).getIdInString());
             } else {

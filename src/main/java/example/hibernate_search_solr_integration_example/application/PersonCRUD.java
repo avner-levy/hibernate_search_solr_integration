@@ -28,13 +28,23 @@ public class PersonCRUD {
     }
 
     @Transactional
+    private void updateEntities() {
+        // Lets add one year to everyone age
+        for (Person person : personDAO.getPeople())
+            person.setAge((short)(person.getAge()+1));
+    }
+
+    @Transactional
     private void printPeople() {
+        System.out.println("All people known:");
         for (Person person : personDAO.getPeople())
             System.out.println("Person: "+ person);
     }
 
     public void run() {
         addEntity();
+        printPeople();
+        updateEntities();
         printPeople();
     }
 }
