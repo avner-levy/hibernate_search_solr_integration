@@ -6,7 +6,7 @@ All you need to do is:
 * Download solr server from: http://www.apache.org/dyn/closer.cgi/lucene/solr/4.0.0  
 * Open the zip to some folder (lets call it X).  
 * Edit the X/example/solr/collection1/conf/schema.xml and add the following lines:  
-<pre>
+
 ```
         <!-- My fields-->
         <field name="id" type="int" indexed="true" stored="true" required="true" multiValued="false"/>
@@ -15,6 +15,7 @@ All you need to do is:
         <field name="comments" type="text_general" indexed="true" stored="true"/>
         <field name="age" type="int" indexed="true" stored="true"/>
 ```
+
 * Comment the predefined fields name, id and comment in schema.xml file  
 * Remove the elevate.xml file from X/example/solr/collection1/conf (it preloads bad data)  
 * go to X/example and run java -jar start.jar  
