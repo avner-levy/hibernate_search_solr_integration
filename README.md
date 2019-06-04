@@ -1,4 +1,4 @@
-hibernate_search_solr_integration
+#hibernate_search_solr_integration
 =================================
 
 Example of how to integrate hibernate search and solr together.  
@@ -7,14 +7,14 @@ All you need to do is:
 * Open the zip to some folder (lets call it X).  
 * Edit the X/example/solr/collection1/conf/schema.xml and add the following lines:  
 <pre>
-`
+```
         <!-- My fields-->
         <field name="id" type="int" indexed="true" stored="true" required="true" multiValued="false"/>
         <field name="_hibernate_class" type="text_general" indexed="true" stored="true"/>
         <field name="name" type="string" indexed="true" stored="true"/>
         <field name="comments" type="text_general" indexed="true" stored="true"/>
         <field name="age" type="int" indexed="true" stored="true"/>
-`
+```
 * Comment the predefined fields name, id and comment in schema.xml file  
 * Remove the elevate.xml file from X/example/solr/collection1/conf (it preloads bad data)  
 * go to X/example and run java -jar start.jar  
